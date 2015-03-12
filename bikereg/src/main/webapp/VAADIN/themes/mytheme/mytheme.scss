@@ -1,0 +1,144 @@
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+//$v-font-family: "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+@import "../valo/valo.scss";
+
+@mixin mytheme {
+
+    $darkGray: #615e5e;
+    $mediumBrown:#F7E7D6;
+    $lightBrown: #FBF3EB;
+
+
+  @include valo;
+
+  .body {
+    background-color:$lightBrown;
+    color:$darkGray;
+  }
+
+  .listLayout {
+    padding-right:12%;
+    padding-left:12%;
+    padding-top:2%;
+    z-index:1;
+  }
+
+  .overlay {
+    background-color:white;
+    opacity:0.95;
+    border-radius:10px;
+    padding:2%;
+    padding-left:7%;
+  }
+
+  .header {
+    height:4%;
+    padding-left:13%;
+    padding-bottom:1%;
+  }
+
+  .header img {
+    height:100px;
+  }
+
+  .filterLayout {
+    width:100%;
+    padding-right:2%;
+    padding-left:2%;
+    padding-bottom:1%;
+  }
+
+  .searchField {
+    vertical-align:baseline;
+  }
+
+  .confirmationWindow {
+    padding:4%;
+  }
+
+  .footer {
+    padding-top:2%;
+    padding-bottom:2%;
+  }
+
+  .modellayout {
+    padding-left:40%;
+  }
+
+  .v-textfield-readonly { /*v-widget v-readonly v-has-width v-textfield-readonly {*/
+    border: none;
+    background-color:white;
+  }
+
+  .v-button {
+  }
+  .v-table {
+    border: 0px;
+  }
+  .v-table-header {
+    background-color:$darkGray;
+    color:white;
+  }
+  .v-table-cell {
+  }
+  .v-table-row {
+  }
+  .v-table-row-odd {
+  }
+  .v-table-row .v-selected {
+    background-color: red;
+  }
+
+  .v-label-undef-w {
+    padding-right:70%;
+    padding-left:10%;
+  }
+
+  /* Lay the options horizontally */
+  .optionGroup {
+      display: inline-block;
+  }
+
+  /* Avoid wrapping if the layout is too tight */
+  .v-select-optiongroup-horizontal {
+      white-space: nowrap;
+  }
+
+  /* Some extra spacing is needed */
+  .v-select-optiongroup-horizontal
+    .v-select-option.v-radiobutton {
+      padding-right: 10px;
+  }
+
+  @media (max-width: 1000px ) {
+
+
+  }
+}
