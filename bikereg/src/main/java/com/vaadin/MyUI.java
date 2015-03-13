@@ -256,6 +256,23 @@ public class MyUI extends UI {
                         .getText()));
             }
         });
+
+        model.addListener(new Property.ValueChangeListener() {
+            public void valueChange(Property.ValueChangeEvent event) {
+                listContainer.removeAllContainerFilters();
+                listContainer.addContainerFilter(new ListFilter(event.getProperty().getValue().toString()));
+
+            }
+        });
+
+        typeSelect.addListener(new Property.ValueChangeListener() {
+            public void valueChange(Property.ValueChangeEvent event) {
+                listContainer.removeAllContainerFilters();
+                listContainer.addContainerFilter(new ListFilter(event.getProperty().getValue().toString()));
+
+            }
+        });
+
     }
 
     /*
@@ -272,9 +289,9 @@ public class MyUI extends UI {
         public boolean passesFilter(Object itemId, Item item) {
 			String haystack = ("" + item.getItemProperty(ARTICLE).getValue()
 					+ item.getItemProperty(NAME).getValue()
-                    + item.getItemProperty(PRICE).getValue())
-                    + item.getItemProperty("Färg").getValue()
-                    + item.getItemProperty("Modell").getValue();
+                    + item.getItemProperty("Färg").getValue().toString().toLowerCase()
+                    + item.getItemProperty("Modell").getValue().toString().toLowerCase()
+                    + item.getItemProperty("Typ").getValue().toString().toLowerCase());
 			return haystack.contains(needle);
         }
 
